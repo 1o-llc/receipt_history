@@ -1,0 +1,11 @@
+[package]
+name = "receipt_history"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.56"
+authors = ["James Hunt <james@1o.business>"]
+license = "MIT OR Apache-2.0"
+description = "Reserved: execution receipts over time (what ran, when, on which spec and code digest, with what outcome) as a stored history with its checks — one kind of history in the differences ecosystem. The first working release follows; nothing in 0.0.1 is usable yet."
+repository = "https://github.com/1o-llc/receipt_history"
+keywords = ["1o", "history", "changes"]
+categories = ["development-tools"]

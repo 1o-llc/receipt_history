@@ -1,0 +1,1 @@
+//! `receipt_history` — reserved. execution receipts over time (what ran, when, on which spec and code digest, with what outcome) as a stored history with its checks — one kind of history in the differences ecosystem. This 0.0.1 holds the name; the first working release follows.
