@@ -1,11 +1,26 @@
 [package]
 name = "receipt_history"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2021"
-rust-version = "1.56"
+# rusqlite 0.40 with its bundled SQLite, as custodian_kit builds it
+rust-version = "1.89"
 authors = ["James Hunt <james@1o.business>"]
 license = "MIT OR Apache-2.0"
-description = "Reserved: execution receipts over time (what ran, when, on which spec and code digest, with what outcome) as a stored history with its checks — one kind of history in the differences ecosystem. The first working release follows; nothing in 0.0.1 is usable yet."
+description = "Execution receipts over time: one receipt per run (what ran, when, on which spec and code digest, with what outcome) kept in a SQLite journal and as receipts/<seq>.json, numbered by one checked counter, and rebuilt from the committed receipt files"
 repository = "https://github.com/1o-llc/receipt_history"
-keywords = ["1o", "history", "changes"]
+readme = "README.md"
+keywords = ["1o", "history", "receipts", "journal", "sqlite"]
 categories = ["development-tools"]
+include = ["src/**", "tests/**", "Cargo.toml", "LICENSE*", "README*", "CHANGELOG*"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# the journal
+rusqlite = { version = "0.40", features = ["bundled"] }
+# the journal's sequence: a checked counter
+uh-tom-mick = "0.1.1"
+# every digest
+stable_digest = "0.1.1"
+# refusal codes
+liaise = "0.2.4"
